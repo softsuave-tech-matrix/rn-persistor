@@ -31,7 +31,7 @@
     "typecheck": "tsc --noEmit",
     "lint": "eslint \"**/*.{js,ts,tsx}\"",
     "clean": "del-cli lib",
-    "prepare": "bob build",
+    "prepare": "yarn clean && bob build",
     "release": "release-it"
   },
   "keywords": [
@@ -70,6 +70,7 @@
     "react": "18.2.0",
     "react-native": "0.73.2",
     "react-native-builder-bob": "^0.23.2",
+    "realm": "^12.5.1",
     "release-it": "^15.0.0",
     "typescript": "^5.0.2"
   },

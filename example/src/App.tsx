@@ -1,18 +1,32 @@
 import * as React from 'react';
 
 import { StyleSheet, View, Text } from 'react-native';
-import { multiply } from 'rn-persistor';
+import RealmStorage from 'rn-persistor';
 
 export default function App() {
-  const [result, setResult] = React.useState<number | undefined>();
-
   React.useEffect(() => {
-    multiply(3, 7).then(setResult);
+    const realmPersist = new RealmStorage();
+    (async () => {
+      try {
+        const key = 'kcb';
+        await realmPersist.setItem(
+          key,
+          JSON.stringify({ name: 'Bharath K C' })
+        );
+        const storedItem = realmPersist.getItem(key);
+        console.log(
+          'storedItem',
+          typeof storedItem === 'string' ? JSON.parse(storedItem) : storedItem
+        );
+      } catch (error) {
+        console.log('realm persist error', error);
+      }
+    })();
   }, []);
 
   return (
     <View style={styles.container}>
-      <Text>Result: {result}</Text>
+      <Text>Result</Text>
     </View>
   );
 }

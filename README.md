@@ -10,12 +10,26 @@ npm install rn-persistor
 
 ## Usage
 
-```js
-import { multiply } from 'rn-persistor';
+```ts
+import RealmStorage from 'rn-persistor';
 
-// ...
+const realmStorage = new RealmStorage();
 
-const result = await multiply(3, 7);
+//  For persistance
+const persister = createAsyncStoragePersister({
+    storage: realmStorage,   // pass to your storage option
+  });
+
+//  For Data storage
+
+  async function test() {
+    const key = 'token';
+    await realmStorage.setItem(key, JSON.stringify('abcdefsdf54s5df4ds5f'));
+    const persistedData = await realmStorage.getItem(key);
+    await realmStorage.removeItem(key);
+  }
+  test();
+
 ```
 
 ## Contributing

@@ -37,7 +37,13 @@
   "keywords": [
     "react-native",
     "ios",
-    "android"
+    "android",
+    "persistor",
+    "react native persistor",
+    "storage",
+    "async storage",
+    "persist",
+    "query persistor"
   ],
   "repository": {
     "type": "git",

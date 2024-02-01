@@ -1,6 +1,6 @@
 # rn-persistor
 
-A persistor package built from realm for react native applications.
+rn-persistor is a lightweight and efficient package that seamlessly integrates Realm into your React Native applications, providing a robust solution for persistent data storage. This package simplifies the integration process and allows developers to focus on building engaging user experiences
 
 ## Installation
 

@@ -7,6 +7,11 @@ rn-persistor is a lightweight and efficient package that seamlessly integrates R
 ```sh
 npm install rn-persistor
 ```
+Install the realm dependency
+
+```sh
+npm install realm
+```
 
 ## Usage
 
